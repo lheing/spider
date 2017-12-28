@@ -12,7 +12,7 @@ class SpiderMan(object):
 
     def crawl(self,root_url):
         self.manager.add_new_url(root_url)
-        while(self.manager.has_new_url() and self.manager.old_url_size()<100):
+        while(self.manager.has_new_url() and self.manager.old_url_size()<300):
             try:
                 new_url = self.manager.get_new_url()
                 html = self.downloader.download(new_url)
@@ -27,5 +27,5 @@ class SpiderMan(object):
 
 if __name__=="__main__":
     spider_man = SpiderMan()
-    spider_man.crawl("https://www.zhihu.com/question/36132174")
-    #spider_man.crawl("https://baike.baidu.com/view/286828.htm")
+    spider_man.crawl("https://baike.baidu.com/item/网络爬虫")
+    #spider_man.crawl("https://baike.baidu.com/view/284853.htm")
